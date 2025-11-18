@@ -21,6 +21,7 @@ function Home() {
   if (!ready) {
     return <FullScreenLoader />;
   }
+  console.log("init ready");
 
   return (
     <div
