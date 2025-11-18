@@ -8,7 +8,14 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     <PrivyProvider
       appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID!}
       config={{
-        appearance: { walletChainType: "ethereum-and-solana" },
+        appearance: {
+          walletChainType: "ethereum-and-solana",
+          walletList: [
+            "metamask",
+            "detected_ethereum_wallets",
+            "detected_solana_wallets",
+          ],
+        },
         externalWallets: { solana: { connectors: toSolanaWalletConnectors() } },
       }}
     >
